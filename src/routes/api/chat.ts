@@ -16,7 +16,7 @@ export const Route = createFileRoute("/api/chat")({
             model: getLovableModel(),
             system:
               "You are an AI Workplace Productivity Assistant. You help professionals draft emails, plan tasks, summarize meetings, and research topics. Be concise, structured, and actionable. Use Markdown when helpful. Always remind users to review AI-generated content when stakes are high.",
-            messages: convertToModelMessages(messages),
+            messages: await convertToModelMessages(messages),
           });
           return result.toUIMessageStreamResponse({ originalMessages: messages });
         } catch (err) {
