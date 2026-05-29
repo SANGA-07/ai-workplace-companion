@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 function NotFoundComponent() {
   return (
@@ -120,6 +121,9 @@ function RootComponent() {
             <header className="sticky top-0 z-20 flex h-14 items-center gap-3 border-b border-border bg-background/80 px-4 backdrop-blur">
               <SidebarTrigger />
               <span className="text-sm text-muted-foreground">Prestige AI</span>
+              <div className="ml-auto">
+                <ThemeToggle />
+              </div>
             </header>
             <main className="flex-1 min-w-0">
               <Outlet />
