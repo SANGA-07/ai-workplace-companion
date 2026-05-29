@@ -120,7 +120,15 @@ function RootComponent() {
           <div className="flex flex-1 flex-col min-w-0">
             <header className="sticky top-0 z-20 flex h-14 items-center gap-3 border-b border-border bg-background/80 px-4 backdrop-blur">
               <SidebarTrigger />
-              <span className="text-sm text-muted-foreground">Prestige AI</span>
+              <span
+                className="font-display text-lg font-extrabold tracking-tight text-primary"
+                style={{
+                  textShadow:
+                    "0 0 10px oklch(0.82 0.13 60 / 0.55), 0 0 20px oklch(0.82 0.13 60 / 0.25)",
+                }}
+              >
+                Prestige AI
+              </span>
               <div className="ml-auto">
                 <ThemeToggle />
               </div>
