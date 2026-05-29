@@ -15,7 +15,6 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarFooter,
   SidebarMenu,
@@ -28,8 +27,8 @@ const items = [
   { title: "Tasks", url: "/tasks", icon: ListTodo },
   { title: "Email Generator", url: "/email", icon: Mail },
   { title: "Meeting Notes", url: "/notes", icon: FileText },
-  { title: "Task Planner", url: "/planner", icon: ListChecks },
-  { title: "Research", url: "/research", icon: Search },
+  { title: "Academic Planner", url: "/planner", icon: ListChecks },
+  { title: "Risk Research", url: "/research", icon: Search },
   { title: "AI Chat", url: "/chat", icon: MessageCircle },
 ];
 
@@ -41,28 +40,37 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader className="border-b border-sidebar-border">
-        <div className="flex items-center gap-2 px-2 py-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gold text-gold-foreground">
+        <div className="flex flex-col items-center gap-2 px-2 py-4 group-data-[collapsible=icon]:py-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[oklch(0.95_0.05_65)] text-primary shadow-sm">
             <Sparkles className="h-5 w-5" />
           </div>
-          <div className="flex flex-col leading-tight group-data-[collapsible=icon]:hidden">
-            <span className="font-display text-sm font-semibold text-sidebar-foreground">
+          <div className="flex flex-col items-center leading-tight group-data-[collapsible=icon]:hidden">
+            <span
+              className="font-display text-xl font-extrabold tracking-tight text-primary"
+              style={{
+                textShadow:
+                  "0 0 12px oklch(0.78 0.13 55 / 0.55), 0 0 24px oklch(0.78 0.13 55 / 0.25)",
+              }}
+            >
               Prestige AI
             </span>
-            <span className="text-xs text-sidebar-foreground/60">Workplace assistant</span>
+            <span className="text-[10px] uppercase tracking-wider text-sidebar-foreground/60">
+              Technology Institute
+            </span>
           </div>
         </div>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Workspace</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.url}>
                   <SidebarMenuButton asChild isActive={isActive(item.url)} tooltip={item.title}>
                     <Link to={item.url} className="flex items-center gap-2">
-                      <item.icon className="h-4 w-4" />
+                      <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[oklch(0.96_0.04_65)] text-[oklch(0.72_0.14_55)]">
+                        <item.icon className="h-4 w-4" />
+                      </span>
                       <span>{item.title}</span>
                     </Link>
                   </SidebarMenuButton>
