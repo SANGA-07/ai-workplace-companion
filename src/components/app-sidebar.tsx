@@ -4,6 +4,7 @@ import {
   Mail,
   FileText,
   ListChecks,
+  ListTodo,
   Search,
   MessageCircle,
   Sparkles,
@@ -24,6 +25,7 @@ import {
 
 const items = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  { title: "Tasks", url: "/tasks", icon: ListTodo },
   { title: "Email Generator", url: "/email", icon: Mail },
   { title: "Meeting Notes", url: "/notes", icon: FileText },
   { title: "Task Planner", url: "/planner", icon: ListChecks },
